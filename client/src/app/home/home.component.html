@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="onChangeTab(1)">Balance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="onChangeTab(2)">Put money</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="onChangeTab(3)">Get money</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="onChangeTab(4)">Weather</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary" (click)="onLogout()">
+                    Logout
+                </button>
+            </div>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-12" *ngIf="activeTab === 'balance'">
+            <button (click)="onGetBalance()">Get Balance</button>
+            <p>{{ balance }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" *ngIf="activeTab === 'increase'">
+            <input type="number" class="form-control" #increase>
+            <button (click)="onIncrease(increase)" >Put money</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" *ngIf="activeTab === 'decrease'">
+            <input type="number" class="form-control" #decrease>
+            <button (click)="onDecrease(decrease)">Get money</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12" *ngIf="activeTab === 'weather'">
+            <button (click)="onGetWeather()">Get Weather</button>
+            <p>temp: {{ temp }} C</p>
+        </div>
+    </div>
+    <div class="row" *ngIf="error">
+        <p>{{ error }}</p>
+        <button (click)="onClearError()">OK</button>
+    </div>
+</div>
