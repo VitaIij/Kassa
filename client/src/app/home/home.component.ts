@@ -83,10 +83,10 @@ export class HomeComponent implements OnInit {
   }
 
   public onGetWeather() {
-    window.navigator.geolocation.getCurrentPosition((position: Position) => {
-      this.httpService.getWeather(position.coords.latitude, position.coords.longitude).subscribe((weather: any) => {
+    //window.navigator.geolocation.getCurrentPosition((position: Position) => {
+      this.httpService.getWeather(50, 30).subscribe((weather: any) => {
         this.temp = weather.main.temp;
       });
-    });
+   // });
   }
 }
