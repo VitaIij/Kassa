@@ -1,0 +1,35 @@
+{
+  "name": "kassa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitaIij/Kassa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitaIij/Kassa/issues"
+  },
+  "homepage": "https://github.com/VitaIij/Kassa#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "swagger-ui-express": "^4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
